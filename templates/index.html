@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Difference Analyzer</h1>
+         <p class="app-description">The Image Difference Analyzer is a powerful tool designed
+             to help you analyze the differences between two images.
+             Whether you're comparing medical scans, before and after images,
+             or any other visual data, this app provides a simple and effective
+             solution to examine variations and identify changes with ease.</p>
+        <form method="POST" action="/result" enctype="multipart/form-data" onsubmit="return validateForm();">
+            <input type="file" id="picture1" name="picture_1">
+            <br>
+            <input type="file" id="picture2" name="picture_2">
+            <br>
+            <input type="submit" value="Upload">
+        </form>
+         <div id="error-message" class="error-message"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
