@@ -31,6 +31,7 @@ def result():
 
         image = cv.imread(path_1, 0)
         image_1 = cv.imread(path_2, 0)
+        image_1 = cv.resize(image_1, (image.shape[1], image.shape[0]))
         image_2 = np.zeros(image.shape, np.uint8)
 
         for i in range(image.shape[0]):
@@ -42,7 +43,7 @@ def result():
 
         image_2 *= 2
         # Resize the resulting image to a fixed size of 500x500 pixels
-        image_2 = cv.resize(image_2, (700, 700))
+        image_2 = cv.resize(image_2, (650, 650))
 
         # Save the resulting image
         result_path = os.path.join('static', 'result.jpg')
